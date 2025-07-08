@@ -6,3 +6,5 @@ playwright.config.js
 demo-todo-app.spec.js
 example.spec.js
 .eslintrc.js
+app.js
+ErrorMessage.jsx
