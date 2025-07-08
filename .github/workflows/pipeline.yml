@@ -56,8 +56,12 @@ jobs:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-latest
     steps:
-      - name: Bump version and push tag
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 👈 IMPORTANT! Get full Git history
 
+      - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.73.0
         if: ${{ github.event_name == 'push' }}
         env:
